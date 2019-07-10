@@ -8,9 +8,7 @@ While the Wireframe can be found [here](https://www.figma.com/file/G7tU7sUVpKv5X
 
 ### Technologies Used
 ---
-* React
-..* Javascript
-..* Ajax
+* React ( JavaScript Framework )
 * Materialize
 * Express
 * Mongodb
