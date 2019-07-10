@@ -1,19 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import ReactDom  from 'react-dom';
+import LandingPage from './pages/LandingPage';
+import { BrowserRouter as Router, Link, Switch } from 'react-router-dom';
 
-function App() {
+class App extends React.Component{
+  render(){
   return (
     <div className="App">
-      <header className="App-header">
-      Hello World
+      <LandingPage />
       {/* create login component */}
       {/* create landing/gallery page component */}
       {/* create submit page component */}
       {/* create  page component */}
-      </header>
     </div>
   );
+  }
 }
 
 export default App;
