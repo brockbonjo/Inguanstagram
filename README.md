@@ -1,4 +1,4 @@
-# Inguanstagram
+# Inguanstagram 
     Inguanstagram is a photosharing site, where users post pictures of inguanas(and other reptiles).
 
 ### Planning ---
