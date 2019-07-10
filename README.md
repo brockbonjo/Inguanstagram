@@ -1,5 +1,6 @@
 # Inguanstagram
-    Inguanstagram is a photosharing site, where users post pictures of inguanas(and other reptiles).
+ 
+ Inguanstagram is a photosharing site, where users post pictures of inguanas(and other reptiles).
 
 ### Planning ---
 As for planning i determined the current iteration v0.5 woule have the following data relationship !(https://www.lucidchart.com/documents/embeddedchart/a12a163a-74ae-4222-86c1-c92de9315c67)
