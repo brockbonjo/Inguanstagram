@@ -1,10 +1,12 @@
-# Inguanstagram 
-    Inguanstagram is a photosharing site, where users post pictures of inguanas(and other reptiles).
+# Inguanstagram
+Photo-sharing app where people can submit photos of there reptiles.
+### Planning 
+---
+My Trello can be found [here](https://trello.com/b/vU7TUyQR/inguanstagram)
 
-### Planning ---
-As for planning i determined the current iteration v0.5 woule have the following data relationship !(https://www.lucidchart.com/documents/embeddedchart/a12a163a-74ae-4222-86c1-c92de9315c67)
+As for planning i determined the current iteration v0.5 woule have the following data relationship as seen [here](https://www.lucidchart.com/documents/embeddedchart/a12a163a-74ae-4222-86c1-c92de9315c67)
 
-While the Wireframe can be found [here](https://www.figma.com/file/G7tU7sUVpKv5XuszG0NEpkUb/Untitled?node-id=5%3A3)
+While the Wireframe can be found [here](https://www.figma.com/file/G7tU7sUVpKv5XuszG0NEpkUb/Untitled?node-id=1%3A4)
 
 ### Technologies Used
 ---
