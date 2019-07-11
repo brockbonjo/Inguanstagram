@@ -46,17 +46,17 @@ class SignUpForm extends Component{
                     </div>
                     <div className="form-group">
                         <div className="col-sm-12">
-                            <input type="email" className="form-control" placeHolder="Email" value={this.state.name} name="Email" onChange={this.handleChange} />
+                            <input type="email" className="form-control" placeHolder="Email" value={this.state.email} name="Email" onChange={this.handleChange} />
                         </div>
                     </div>
                     <div className="form-group">
                         <div className="col-sm-12">
-                            <input type="password" className="form-control" placeHolder="Password" value={this.state.name} name="Password" onChange={this.handleChange} />
+                            <input type="password" className="form-control" placeHolder="Password" value={this.state.password} name="Password" onChange={this.handleChange} />
                         </div>
                     </div>
                     <div className="form-group">
                         <div className="col-sm-12">
-                            <input type="password" className="form-control" placeHolder="Password" value={this.state.name} name="Confirm Password" onChange={this.handleChange} />
+                            <input type="password" className="form-control" placeHolder="Password" value={this.state.passwordConf} name="Confirm Password" onChange={this.handleChange} />
                         </div>
                     </div>
                     <div className='form-group'>
