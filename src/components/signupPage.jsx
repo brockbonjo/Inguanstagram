@@ -10,6 +10,7 @@ class SignUpForm extends Component{
         password:'',
         passwordConf:''
     };
+    // check the model for user information
 
 
     handleChange = (e) => {
