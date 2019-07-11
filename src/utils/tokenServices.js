@@ -1,6 +1,7 @@
 
 
 function setToken(){
+    let token =localStorage.getToken('token')
     if(token){          //"what it's called", and the actual item
         localStorage.setItem('token', token)
     } else {
@@ -8,4 +9,29 @@ function setToken(){
     }
 }
 
-export default setToken
+function getToken(){
+    let token = localStorage.getItem('token');
+    if(token){
+        const payload = JSON.parse(atob(token.split('.')[1]));
+    if(payload.exp < Date.now() / 1000){
+        localStorage.removeItem('token');
+        token=null;
+      }
+    }
+        return token;
+    }
+
+    function getUserFromToken(){
+        const token = getToken();
+        return token ? JSON.parse(atob(token.split('.')[1])).user : null;
+    }
+    function removeToken(){
+        localStorage.removeItem('token');
+    }
+
+export default {
+    setToken,
+    getToken,
+    getUserFromToken,
+    removeToken
+}

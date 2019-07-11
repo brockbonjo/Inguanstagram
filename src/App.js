@@ -1,18 +1,37 @@
 import React, { Component } from 'react';
-import ReactDom  from 'react-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
-import { BrowserRouter as Router, Link, Switch } from 'react-router-dom';
+import userService from './utils/userServices'
+import { updateExpression } from '@babel/types';
 
-class App extends React.Component{
-  render(){
+class App extends Component{
+  constructor(){
+    super();
+    this.state = {
+      user: userService.getUser()
+    };
+  }
+
+  handleLogout = () => {
+    this.setState({user: null});
+  } 
+
+handleSignupOrLogin = () => {
+  this.setState({user: userService.getUser()});
+}
+  // After authentication, createpost function
+        render(){
   return (
+      <Router>
     <div className="App">
-      <LandingPage />
-      {/* create login component */}
-      {/* create landing/gallery page component */}
-      {/* create submit page component */}
-      {/* create  page component */}
+      <header className='header-footer'>Inguanstgram</header>
+      <Switch>
+        <Route exact path = '/' render = {() =>
+          <LandingPage />
+        }/>
+      </Switch>
     </div>
+    </Router>
   );
   }
 }
