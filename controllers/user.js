@@ -36,6 +36,5 @@ function logout(){
 }
 
 module.export = {
-    login,
-    logout
+    signup
 };
