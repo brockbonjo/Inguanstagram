@@ -39,24 +39,24 @@ class SignUpForm extends Component{
                  <header className="header-footer">Sign UP</header>
                  <form className="form-horizontal" onSubmit={this.handleSubmit} >
                     <div className="form-group">
-                    <div className="col-sm-12">
-                        <input type="text" className="form-control" placeHolder="Name" value={this.state.name} name="Name" onChange={this.handleChange} />
-                     </div>
+                        <div className="col-sm-12">
+                            <input type="text" className="form-control" placeHolder="Name" value={this.state.name} name="Name" onChange={this.handleChange} />
+                        </div>
                     </div>
                     <div className="form-group">
-                    <div className="col-sm-12">
-                        <input type="email" className="form-control" placeHolder="Email" value={this.state.name} name="Email" onChange={this.handleChange} />
-                     </div>
+                        <div className="col-sm-12">
+                            <input type="email" className="form-control" placeHolder="Email" value={this.state.name} name="Email" onChange={this.handleChange} />
+                        </div>
                     </div>
                     <div className="form-group">
-                    <div className="col-sm-12">
-                        <input type="password" className="form-control" placeHolder="Password" value={this.state.name} name="Password" onChange={this.handleChange} />
-                     </div>
+                        <div className="col-sm-12">
+                            <input type="password" className="form-control" placeHolder="Password" value={this.state.name} name="Password" onChange={this.handleChange} />
+                        </div>
                     </div>
                     <div className="form-group">
-                    <div className="col-sm-12">
-                        <input type="password" className="form-control" placeHolder="Password" value={this.state.name} name="Confirm Password" onChange={this.handleChange} />
-                     </div>
+                        <div className="col-sm-12">
+                            <input type="password" className="form-control" placeHolder="Password" value={this.state.name} name="Confirm Password" onChange={this.handleChange} />
+                        </div>
                     </div>
                     <div className='form-group'>
                         <div className='col-sm-12 text-center'>
