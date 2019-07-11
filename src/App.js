@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import userService from './utils/userServices'
-import { updateExpression } from '@babel/types';
+
 
 class App extends Component{
   constructor(){
@@ -13,7 +13,7 @@ class App extends Component{
   }
 
   handleLogout = () => {
-    this.setState({user: null});
+  this.setState({user: null});
   } 
 
 handleSignupOrLogin = () => {
@@ -27,7 +27,10 @@ handleSignupOrLogin = () => {
       <header className='header-footer'>Inguanstgram</header>
       <Switch>
         <Route exact path = '/' render = {() =>
-          <LandingPage />
+          <LandingPage 
+          user = {this.state.user}
+          handleLogout = {this.handleLogout}
+          />
         }/>
       </Switch>
     </div>
