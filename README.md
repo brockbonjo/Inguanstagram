@@ -1,7 +1,5 @@
 # Inguanstagram
- 
- Inguanstagram is a photosharing site, where users post pictures of inguanas(and other reptiles).
-
+Photo-sharing app where people can submit photos of there reptiles.
 ### Planning 
 ---
 My Trello can be found [here](https://trello.com/b/vU7TUyQR/inguanstagram)
