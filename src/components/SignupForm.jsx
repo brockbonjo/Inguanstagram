@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import userServices from '../utils/userServices'
 //general purpose form that can be used for other forms
 class SignUpPage extends Component{
+// react method
 
     state={
         name:'',
@@ -13,8 +14,9 @@ class SignUpPage extends Component{
     // check the model for user information
 
 
+    // this.handleChange = this.handleChange.bind(this)
+
     handleChange = (e) => {
-        this.props.updateMessage('');
         this.setState({
             [e.target.name]: e.target.value
         });
@@ -41,22 +43,22 @@ class SignUpPage extends Component{
                  <form className="form-horizontal" onSubmit={this.handleSubmit} >
                     <div className="form-group">
                         <div className="col-sm-12">
-                            <input type="text" className="form-control" placeHolder="Name" value={this.state.name} name="Name" onChange={this.handleChange} />
+                            <input type="text" className="form-control" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} />
                         </div>
                     </div>
                     <div className="form-group">
                         <div className="col-sm-12">
-                            <input type="email" className="form-control" placeHolder="Email" value={this.state.email} name="Email" onChange={this.handleChange} />
+                            <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
                         </div>
                     </div>
                     <div className="form-group">
                         <div className="col-sm-12">
-                            <input type="password" className="form-control" placeHolder="Password" value={this.state.password} name="Password" onChange={this.handleChange} />
+                            <input type="password" className="form-control" placeholder="Password" value={this.state.password} name="password" onChange={this.handleChange} />
                         </div>
                     </div>
                     <div className="form-group">
                         <div className="col-sm-12">
-                            <input type="password" className="form-control" placeHolder="Password" value={this.state.passwordConf} name="Confirm Password" onChange={this.handleChange} />
+                            <input type="password" className="form-control" placeholder="Confirm password" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} />
                         </div>
                     </div>
                     <div className='form-group'>

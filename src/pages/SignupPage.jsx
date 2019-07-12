@@ -5,12 +5,11 @@ import SignupForm from '../components/SignupForm'
 
 class SignupPage extends Component {
     constructor(props){
-        super(props)
-        this.state = {message:''}
+        super(props);
+        console.log(this.state)
+        this.state = {message:''};
     }
-    updateMessage = (msg) => {
-        this.setState({message: msg})
-    }
+    
 
     render(){
         return (

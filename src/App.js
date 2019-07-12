@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import userService from './utils/userServices'
+import SignUpPage from './components/SignupForm';
 
 
 class App extends Component{
@@ -13,7 +14,8 @@ class App extends Component{
   }
 
   handleLogout = () => {
-  this.setState({user: null});
+    userService.logout();
+    this.setState({user: null});
   } 
 
 handleSignupOrLogin = () => {
@@ -22,7 +24,7 @@ handleSignupOrLogin = () => {
   // After authentication, createpost function
         render(){
   return (
-      <Router>
+  <Router>
     <div className="App">
       <header className='header-footer'>Inguanstgram</header>
       <Switch>
@@ -30,6 +32,12 @@ handleSignupOrLogin = () => {
           <LandingPage 
           user = {this.state.user}
           handleLogout = {this.handleLogout}
+          />
+        }/>
+        <Route exact path = '/signup' render = {() =>
+          <SignUpPage 
+            user = {this.state.user}
+            handleSignupOrLogin={this.handleSignupOrLogin}
           />
         }/>
       </Switch>
