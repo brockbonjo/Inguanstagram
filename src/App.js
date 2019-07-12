@@ -48,14 +48,12 @@ handleSignupOrLogin = () => {
           handleSignupOrLogin = {this.handleSignupOrLogin}
             />
           }/>
-
-          />
-        }/>
       </Switch>
     </div>
     </Router>
-  );
+    );
   }
+
 }
 
 export default App;
