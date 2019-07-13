@@ -1,7 +1,7 @@
 
 
 function setToken(){
-    let token =localStorage.getToken('token')
+    let token = localStorage.getItem('token')
     if(token){          //"what it's called", and the actual item
         localStorage.setItem('token', token)
     } else {

@@ -4,32 +4,31 @@ import userServices from '../utils/userServices'
 //general purpose form that can be used for other forms
 class SignUpPage extends Component{
 // react method
-
     state={
-        name:'',
+        username:'',
         email:'',
         password:'',
         passwordConf:''
     };
-    // check the model for user information
 
-
-    // this.handleChange = this.handleChange.bind(this)
-
+    
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         });
     }
 
+
     handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await userServices.signup(this.state);
-            this.props.handleSignupOfLogin();
+            await userServices.signUp(this.state);
+            // in apps ultimately getsUser, => getTokenfrom User
+            this.props.handleSignupOrLogin();
             this.props.history.push('/');
         } catch(err){
-            this.props.updateMessage(err.message);
+            console.log(err)
+            console.log('testing');
         }
     }
     isFormInvalid(){
@@ -43,7 +42,7 @@ class SignUpPage extends Component{
                  <form className="form-horizontal" onSubmit={this.handleSubmit} >
                     <div className="form-group">
                         <div className="col-sm-12">
-                            <input type="text" className="form-control" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} />
+                            <input type="text" className="form-control" placeholder="Name" value={this.state.username} name="username" onChange={this.handleChange} />
                         </div>
                     </div>
                     <div className="form-group">
@@ -61,10 +60,10 @@ class SignUpPage extends Component{
                             <input type="password" className="form-control" placeholder="Confirm password" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} />
                         </div>
                     </div>
-                    <div className='form-group'>
-                        <div className='col-sm-12 text-center'>
-                            <button className="btn btn-default" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
-                                <Link to='/'>Cancel</Link>
+                    <div className="form-group">
+                        <div className="col-sm-12 text-center">
+                            <button className="btn btn-default">Sign Up</button>&nbsp;&nbsp;
+                            <Link to='/'>Cancel</Link>
                         </div>
                     </div>
                  </form>

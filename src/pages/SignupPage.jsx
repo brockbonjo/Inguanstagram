@@ -9,14 +9,17 @@ class SignupPage extends Component {
         console.log(this.state)
         this.state = {message:''};
     }
-    
+
 
     render(){
         return (
             <div className='SignupPage'>
-                <SignupForm {...this.props} updateMessage={this.updateMessage} />
+                <SignupForm 
+                {...this.props} />
                 <p>{this.state.message}</p>
-                <p>SignupPage</p>
+                <Login 
+                 {...this.props}
+                />
             </div>
         );
     }

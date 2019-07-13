@@ -5,19 +5,19 @@ const SALT_ROUNDS = 6;
 
 const userSchema = new mongoose.Schema({
     username:{
-        Type:String,
+        type:String,
         required:true,
         unique:true
     },
     email: {
-        Type:String, 
+        type:String, 
         lowercase: true,
-        required:true, 
+        required:true 
     },
     password:{
-        Type:String, 
+        type:String, 
         minlength:8,
-        required:true,
+        required:true
     }
 }, {
     timestamps:true
@@ -25,9 +25,9 @@ const userSchema = new mongoose.Schema({
 );
 
 userSchema.pre('save', function(next) {
-    const user= this;
+    const user = this;
     if(!user.isModified('password')) return next();
-    bcrypu.hash(user.password, SALT_ROUNDS, function(err, hash){
+    bcrypt.hash(user.password, SALT_ROUNDS, function(err, hash){
         if(err) return next(err);
         user.password = hash;
         next();
