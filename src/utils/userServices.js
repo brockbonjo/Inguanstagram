@@ -26,6 +26,8 @@ function logout(){
 }
 
 function login(creds){
+    console.log(fetch())
+    console.log(login(creds))
     return fetch(BASE_URL + 'login',{
         mode:'cors',
         method: 'POST',
@@ -34,9 +36,7 @@ function login(creds){
     })
     .then(res => {
         console.log(res)
-        console.log(fetch)
         if(res.ok) return res.json();
-        console.log(res.ok)
         throw new Error('Bad Credentials');
     })
     .then(({ token }) => {tokenService.setToken(token)});

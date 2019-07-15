@@ -9,6 +9,7 @@ function LandingPage(props){
     <div>
           <NavBar 
           user = {props.user}
+          handleSignOrLogin = {props.handleSignOrLogin}
           />
     </div>
         )

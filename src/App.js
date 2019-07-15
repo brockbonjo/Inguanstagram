@@ -33,6 +33,7 @@ handleSignupOrLogin = () => {
           <LandingPage 
           user = {this.state.user}
           handleLogout = {this.handleLogout}
+          handleSignupOrLogin ={this.handleSignupOrLogin}
           />
         }/>
         <Route exact path = '/signup' render = {(props) =>

@@ -12,7 +12,7 @@ const NavBar = (props) => {
     </div>
     :
     <div>
-        <Link to='/login'>Login</Link>
+        <Link to='/login' onClick = {props.handleSignOrLogin}>Login</Link>
         &nbsp;&nbsp;|&nbsp;&nbsp;
         <Link to='/signup'>SignUp</Link>
     </div>;

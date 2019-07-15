@@ -7,14 +7,19 @@ class Post extends Component{
     super(props);
 }
     render(props){
-      return <article className = "Post" ref='Post'>
-        <header>
+      return  (
+          <article className = "Post" ref='Post'>
+          <header>
             <div className="Post-user">
-            <div className="Post-user-avatar">
+                <div className="Post-user-avatar">
                 {/* insert image */}
-            </div>
+                </div>
             </div>
         </header>
-        }
+        </article>
+        )        
+    }
 
 }
+
+export default Post

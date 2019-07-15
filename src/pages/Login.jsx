@@ -21,7 +21,6 @@ class Login extends React.Component{
             e.preventDefault();
             try {
                 await userService.login(this.state);
-                console.log(userService.login())
                 this.props.handleSignupOrLogin();
                 this.props.history.push('/');
             } catch(err){
