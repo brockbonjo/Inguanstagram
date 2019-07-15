@@ -23,8 +23,9 @@ async function signup(req, res){
 }
 async function login(req, res) {
     try {
-      const user = await User.findOne({email: req.body.email});
+      const user = await User.findOne({username: req.body.username});
       if (!user) return res.status(401).json({err: 'bad credentials'});
+      console.log(user)
       user.comparePassword(req.body.password, (err, isMatch) => {
         if (isMatch) {
           const token = createJWT(user);
@@ -34,6 +35,7 @@ async function login(req, res) {
         }
       });
     } catch (err) {
+      console.log(err)
       return res.status(401).json(err);
     }
   }

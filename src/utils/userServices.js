@@ -1,4 +1,4 @@
-import tokenServices from './tokenServices';
+import tokenService from './tokenServices';
 
 const BASE_URL = '/routes/users/';
 
@@ -9,33 +9,37 @@ function signUp(user){
         headers: new Headers({'Content-Type': 'application/json'}),
         body: JSON.stringify(user)
     })
-    .then(res => {
+.then(res => {
         console.log(res)
         if(res.ok) return res.json()
         throw  new Error('Sorry email\'s taken' )
     })//provides the token
-    .then(({ token }) => {tokenServices.setToken(token)});
+    .then(({ token }) => {tokenService.setToken(token)});
 }
 
 function getUser(){ 
-    return tokenServices.getUserFromToken()  
+    return tokenService.getUserFromToken()  
 }
 
 function logout(){
-    return tokenServices.removeToken();
+    return tokenService.removeToken();
 }
 
 function login(creds){
     return fetch(BASE_URL + 'login',{
+        mode:'cors',
         method: 'POST',
-        headers: new Headers ({'Content-Type': 'application/json'}),
+        headers: new Headers({'Content-Type': 'application/json'}),
         body: JSON.stringify(creds)
-})
+    })
     .then(res => {
+        console.log(res)
+        console.log(fetch)
         if(res.ok) return res.json();
+        console.log(res.ok)
         throw new Error('Bad Credentials');
     })
-    .then(({ token }) => tokenServices.setToken(token));
+    .then(({ token }) => {tokenService.setToken(token)});
 }
 
 export default {

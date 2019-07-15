@@ -1,38 +1,36 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
-import userServices from '../utils/userServices'
+import userService from '../utils/userServices'
 
 class Login extends React.Component{
     state = {
         username:'',
         password:''
     }
-
+    
     handleChange = (e) => {
-        this.setsState({
+        this.setState({
             [e.target.name]: e.target.value
         });
     }
-
     handleSignupOrLogin = () => {
-        this.setState({user: userServices.getUser()})};
-
-
-    handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            await userServices.login(this.state);
-            // in apps ultimately getsUser, => getTokenfrom User
-            this.props.handleSignupOrLogin();
-            this.props.history.push('/');
-        } catch(err){
-            console.log(err)
-            console.log('Invalid Credentials');
+        this.setState({user: userService.getUser()})};
+        
+        
+        handleSubmit = async (e) => {
+            e.preventDefault();
+            try {
+                await userService.login(this.state);
+                console.log(userService.login())
+                this.props.handleSignupOrLogin();
+                this.props.history.push('/');
+            } catch(err){
+                console.log(err + "login err")
+               console.log('Invalid Credentials');
+            }
+            //TODO check to see if passing a history prop will work
         }
-    }
-    isFormInvalid(){
-        return !(this.state.name&& this.state.password === this.state.passwowrdConf);
-    }
+
 
     render() {
         return (
@@ -41,12 +39,12 @@ class Login extends React.Component{
             <form className="form-horizontal" onSubmit={this.handleSubmit} >
               <div className="form-group">
                 <div className="col-sm-12">
-                  <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
+                  <input type="username" className="form-control" placeholder="Username" value={this.state.username} name="username" onChange={this.handleChange} />
                 </div>
               </div>
               <div className="form-group">
                 <div className="col-sm-12">
-                  <input type="password" className="form-control" placeholder="Password" value={this.state.pw} name="pw" onChange={this.handleChange} />
+                  <input type="password" className="form-control" placeholder="Password" value={this.state.password} name="password" onChange={this.handleChange} />
                 </div>
               </div>
               <div className="form-group">
