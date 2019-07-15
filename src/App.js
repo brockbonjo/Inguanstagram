@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
-import userServices from './utils/userServices'
+import userServices from './utils/userServices';
+import tokenServices from './utils/userServices';
 import SignUpPage from './components/SignupForm';
 import Login from './pages/Login'
 

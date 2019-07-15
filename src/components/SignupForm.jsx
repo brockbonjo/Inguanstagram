@@ -33,6 +33,7 @@ class SignUpPage extends Component{
     }
     isFormInvalid(){
         return !(this.state.name && this.state.email && this.state.password === this.state.passwowrdConf);
+        //TODO Error message stating the password is invalid(# of chars)
     }
     
     render(){
