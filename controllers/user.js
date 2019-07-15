@@ -24,6 +24,7 @@ async function signup(req, res){
 async function login(req, res) {
     try {
       const user = await User.findOne({username: req.body.username});
+      console.log(User)
       if (!user) return res.status(401).json({err: 'bad credentials'});
       console.log(user)
       user.comparePassword(req.body.password, (err, isMatch) => {
